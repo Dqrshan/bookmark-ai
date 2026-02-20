@@ -53,33 +53,33 @@ export function FileUpload({ onFileUpload, isLoading }: FileUploadProps) {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto flex flex-col gap-6 items-center justify-center p-8 bg-card rounded-2xl border shadow-sm mt-20">
+        <div className="w-full max-w-2xl mx-auto flex flex-col gap-6 items-center justify-center p-8 bg-card/60 backdrop-blur-2xl rounded-3xl border border-white/5 shadow-2xl mt-8">
             <div className="text-center space-y-2">
-                <h2 className="text-2xl font-bold tracking-tight">Import Bookmarks</h2>
-                <p className="text-muted-foreground text-sm">Organize your web with AI</p>
+                <h2 className="text-2xl font-bold tracking-tight text-foreground/90">Import Bookmarks</h2>
+                <p className="text-muted-foreground text-sm font-medium">Organize your web with AI</p>
             </div>
 
             <label
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
-                className={`w-full h-64 border-2 border-dashed rounded-xl flex flex-col items-center justify-center cursor-pointer transition-colors duration-200
-          ${isDragging ? 'border-primary bg-primary/5' : 'border-muted-foreground/25 hover:border-primary/50'}
-          ${isLoading ? 'opacity-50 pointer-events-none' : ''}
+                className={`w-full h-64 border-2 border-dashed rounded-2xl flex flex-col items-center justify-center cursor-pointer transition-all duration-300
+          ${isDragging ? 'border-primary bg-primary/10 scale-[1.02]' : 'border-border/60 hover:border-primary/50 hover:bg-white/2'}
+          ${isLoading ? 'opacity-50 pointer-events-none scale-95' : ''}
         `}
             >
                 <div className="flex flex-col items-center justify-center space-y-4 text-center p-6">
-                    <div className="p-4 bg-secondary rounded-full">
+                    <div className="p-4 bg-muted/50 rounded-full ring-1 ring-white/10 shadow-inner">
                         {isLoading ?
                             <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" /> :
-                            <UploadCloud className="w-8 h-8 text-muted-foreground" />
+                            <UploadCloud className="w-8 h-8 text-primary/80" />
                         }
                     </div>
                     <div>
-                        <p className="font-semibold text-sm">
+                        <p className="font-semibold text-sm text-foreground/80">
                             {isLoading ? 'Processing bookmarks...' : 'Click to upload or drag and drop'}
                         </p>
-                        {!isLoading && <p className="text-xs text-muted-foreground mt-1">Netscape .html format exported from browsers</p>}
+                        {!isLoading && <p className="text-xs text-muted-foreground/70 mt-1">Netscape .html format exported from browsers</p>}
                     </div>
                 </div>
                 <input
