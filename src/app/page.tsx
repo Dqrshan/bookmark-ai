@@ -8,6 +8,7 @@ import { parseBookmarksHtml } from "@/lib/bookmarkParser";
 import { AlertCircle, Github, Star } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { motion, AnimatePresence } from "framer-motion";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   const [analysisResult, setAnalysisResult] = useState<AIAnalysisResult | null>(null);
@@ -63,6 +64,10 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-background flex flex-col items-center justify-center p-4 overflow-hidden selection:bg-primary/30">
+
+      <div className="absolute top-4 right-4 z-50">
+        <ModeToggle />
+      </div>
 
       {/* Background radial gradient decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
