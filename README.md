@@ -21,7 +21,7 @@ Built with **Next.js 15 (React 19)**, **Tailwind CSS v4**, **Shadcn UI**, and th
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/bookmark-ai.git
+   git clone https://github.com/Dqrshan/bookmark-ai.git
    cd bookmark-ai
    ```
 
